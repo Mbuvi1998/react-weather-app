@@ -1,6 +1,4 @@
-
-
-const TopButtons = () => {
+const TopButtons = ({ setQuery }) => {
   const cities = [
     { id: 1, name: 'London' },
     { id: 2, name: 'Sydney' },
@@ -15,6 +13,7 @@ const TopButtons = () => {
         <button
           key={city.id}  // Add a key prop for each item in the map
           className="text-lg font-medium hover:bg-gray-700/20 px-3 py-2 rounded-md transition ease-in"
+          onClick={() => setQuery({ q: city.name })}  // Corrected parentheses
         >
           {city.name}
         </button>
