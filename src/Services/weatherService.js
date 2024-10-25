@@ -12,7 +12,7 @@ const getWeatherData = async (infoType, searchParams) => {
     return await res.json()
 }
 
-const iconUrlFromCode = (icon) =>  'http://openweathermap.org/img/wn/${icon}@2x.png'
+const iconUrlFromCode = (icon) =>  `http://openweathermap.org/img/wn/${icon}@2x.png`
 
 const formatToLocalTime = (secs, offset, format = 'cccc, dd LLL yyyy | Local time: hh:mm a') =>
     DateTime.fromSeconds(secs + offset, {Zone: "utc"}).toFormat(format)
